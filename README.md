@@ -6,6 +6,6 @@ Lucky wheel spin APIs:
 - Web Storage API
 - Canvas API
 
-Frameworks:
+Frameworks / Libraries:
 - JsStore (to simplify IndexedDB usage for our project)
 - CreateJS (EaseJS, TweenJS and SoundJS)
