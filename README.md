@@ -1,2 +1,10 @@
 # The-Lucky-Wheel-Hackathon
-Under design and development.
+Design and development in progress.
+
+Lucky wheel spin APIs:
+- IndexedDB
+- Web Storage API
+- Canvas API
+
+Frameworks:
+- JsStore (IndexedDB)
