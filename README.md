@@ -1,6 +1,6 @@
 # The-Lucky-Wheel-Hackathon
 Design and development in progress.
-The game itself will be available at game.matejambor.com but will not be accessable for the public during the development.
+The demo is available at game.matejambor.com but it's still just a prototype.
 
 Lucky wheel spin APIs:
 - IndexedDB
