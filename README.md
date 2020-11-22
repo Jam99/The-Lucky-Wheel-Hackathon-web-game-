@@ -8,5 +8,4 @@ Lucky wheel spin APIs:
 - Canvas API
 
 Frameworks / Libraries:
-- JsStore (to simplify IndexedDB usage for our project)
 - CreateJS (EaseJS, TweenJS and SoundJS)
