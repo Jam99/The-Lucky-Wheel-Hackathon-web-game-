@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt</title>
+    <link rel="icon" type="image/png" href="/sources/images/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/sources/css/style.css"/>
+</head>
+<body oncontextmenu="return false">
+    <div id="canvas_container">
+        <canvas id="game_canvas"></canvas>
+        <div id="game-ui-container">
+            <a class="game-ui-item item-grab" id="button_grab" href="javascript:game.onInventoryClicked(0)"></a>
+            <a class="game-ui-item item-shovel" id="button_shovel" href="javascript:game.onInventoryClicked(1)"></a>
+            <a class="game-ui-item item-tale" id="button_item_0" href="javascript:game.onInventoryClicked(2)"></a>
+        </div>
+        <div id="tale_popup" onclick="game.closeHint()">
+            <div id="tale_content">
+                <h2 id="tale_name">This is the title</h2>
+                <p id="tale_value">This is a long text to test the display of the tale. And these are the numbers: 0123456789</p>
+            </div>
+        </div>
+        <a href="javascript:toggleFullScreen()" id="full-screen-control" class="out"></a>
+    </div>
+    <script>
+        const map = {
+            startX: 0,
+            startY: 0,
+            endX: 2000,
+            endY: 2000,
+            padding: 500,
+            frame_material: "grass_dirty",
+            ambient_sound: "ambient",
+            shapes: [
+                {
+                    type: "ground",
+                    texture: "grass",
+                    dig_texture: "grass_dig",
+                    x: -1,
+                    y: 0,
+                    w: 2002,
+                    h: 2000
+                },
+                {
+                    type: "detail",
+                    textures: ["house_1"],
+                    click_sounds: ["knock", "doorbell"],
+                    x: 1000,
+                    y: 0
+                },
+                {
+                    type: "detail",
+                    textures: ["house_2"],
+                    click_sounds: ["knock", "doorbell"],
+                    x: 600,
+                    y: 1200
+                },
+                {
+                    type: "detail",
+                    textures: ["house_3"],
+                    click_sounds: ["knock", "doorbell"],
+                    x: 1000,
+                    y: 1000
+                },
+                {
+                    type: "detail",
+                    textures: ["tree_1"],
+                    x: 600,
+                    y: 300
+                },
+                {
+                    type: "detail",
+                    textures: ["tree_2"],
+                    x: 0,
+                    y: 280
+                },
+                {
+                    type: "detail",
+                    textures: ["tree_3"],
+                    x: 1200,
+                    y: 500
+                },
+                {
+                    type: "detail",
+                    textures: ["tree_4"],
+                    x: 1700,
+                    y: 400
+                }
+            ],
+            hidden_items: [
+                {
+                    type: "hint",
+                    name: "This is a hint tale",
+                    value: "It should contain some hints to find the next/final tale.",
+                    pos: {x: 150, y: 300}
+                },
+                {
+                    type: "final",
+                    name: "This is the final tale",
+                    value: "It should contain statistics.",
+                    pos: {x: 450, y: 600}
+                }
+            ]
+        };
+
+        const texture_paths = [
+            "/sources/images/textures/grass.png",
+            "/sources/images/textures/grass_dig.png",
+            "/sources/images/textures/grass_dirty.png",
+            "/sources/images/textures/sand.png",
+            "/sources/images/textures/sand_dig.png",
+            "/sources/images/textures/sand_dirty.png",
+            "/sources/images/textures/house_1.png",
+            "/sources/images/textures/house_2.png",
+            "/sources/images/textures/house_3.png",
+            "/sources/images/textures/bush.png",
+            "/sources/images/textures/tree_1.png",
+            "/sources/images/textures/tree_2.png",
+            "/sources/images/textures/tree_3.png",
+            "/sources/images/textures/tree_4.png"
+        ];
+
+        const sounds = [
+            "/sources/sounds/ambient.mp3",
+            "/sources/sounds/knock.mp3",
+            "/sources/sounds/doorbell.mp3",
+            "/sources/sounds/dig.mp3",
+            "/sources/sounds/dig_hit.mp3",
+            "/sources/sounds/heaven.mp3"
+        ];
+    </script>
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="/sources/js/GameView/GameView.js"></script>
+    <script src="/sources/js/game.js"></script>
+</body>
+</html>
