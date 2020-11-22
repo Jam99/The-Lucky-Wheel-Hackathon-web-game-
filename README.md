@@ -8,4 +8,4 @@ Lucky wheel spin APIs:
 - Canvas API
 
 Frameworks / Libraries:
-- CreateJS (EaseJS, TweenJS and SoundJS)
+- CreateJS (EaseJS, SoundJS and PreloadJS)
